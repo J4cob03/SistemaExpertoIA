@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Debo abrir mi negocio? — Sistema Experto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header class="encabezado">
+        <div class="contenedor">
+            <div class="encabezado-contenido">
+                <div class="logo-icono">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="logo-titulo">ExpertBiz</p>
+                    <p class="logo-subtitulo">Sistema Experto · Viabilidad Empresarial</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="principal">
+        <div class="contenedor">
+
+            <!-- Bienvenida -->
+            <section id="landing" class="seccion visible activo">
+
+                <div class="hero-gradiente">
+                    <h1 class="hero-titulo">¿Deberías abrir tu propio negocio?</h1>
+                    <p class="hero-descripcion">
+                        Responde 21 preguntas sobre tu idea y nuestro sistema experto analizará
+                        los factores más importantes para decirte qué tan viable es tu proyecto.
+                    </p>
+
+                    <div class="hero-pasos">
+                        <div class="paso-chip">
+                            <span class="paso-num">1</span>
+                            Responde 21 preguntas
+                        </div>
+                        <div class="paso-chip">
+                            <span class="paso-num">2</span>
+                            El sistema analiza +150 reglas
+                        </div>
+                        <div class="paso-chip">
+                            <span class="paso-num">3</span>
+                            Recibe tu veredicto
+                        </div>
+                    </div>
+
+                    <button class="btn btn-blanco btn-grande" id="btn-iniciar">
+                        Comenzar evaluación
+                    </button>
+                </div>
+
+                <!-- Indicadores del sistema -->
+                <div class="indicadores-sistema">
+                    <div class="indicador">
+                        <span class="indicador-numero">+150</span>
+                        <span class="indicador-texto">Reglas de decisión</span>
+                    </div>
+                    <div class="indicador">
+                        <span class="indicador-numero">21</span>
+                        <span class="indicador-texto">Preguntas clave</span>
+                    </div>
+                    <div class="indicador">
+                        <span class="indicador-numero">4</span>
+                        <span class="indicador-texto">Niveles de resultado</span>
+                    </div>
+                    <div class="indicador">
+                        <span class="indicador-numero">100%</span>
+                        <span class="indicador-texto">Gratis y sin registro</span>
+                    </div>
+                </div>
+
+                <!-- ¿Cómo funciona? -->
+                <div class="grid-caracteristicas">
+                    <div class="tarjeta-caracteristica">
+                        <div class="carac-icono">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                            </svg>
+                        </div>
+                        <h3>Base de conocimiento</h3>
+                        <p>+150 reglas de decisión que evalúan tus finanzas, ubicación de mercado y preparación para
+                            darte un diagnóstico certero.</p>
+                    </div>
+                    <div class="tarjeta-caracteristica">
+                        <div class="carac-icono">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5" />
+                                <path d="M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <h3>Motor de inferencia</h3>
+                        <p>El sistema encadena reglas hacia adelante para derivar conclusiones paso a paso.</p>
+                    </div>
+                    <div class="tarjeta-caracteristica">
+                        <div class="carac-icono">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                            </svg>
+                        </div>
+                        <h3>Explicación detallada</h3>
+                        <p>Puedes ver exactamente qué reglas se activaron y por qué llegamos al resultado.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Cuestionario -->
+            <section id="quiz" class="seccion">
+
+                <!-- Barra de progreso -->
+                <div class="contenedor-progreso">
+                    <div class="progreso-encabezado">
+                        <span class="progreso-etiqueta">
+                            Pregunta <span id="numero-pregunta">1</span>
+                            de <span id="total-preguntas">9</span>
+                        </span>
+                        <span class="progreso-porcentaje" id="porcentaje">14%</span>
+                    </div>
+                    <div class="barra-progreso">
+                        <div class="barra-progreso-relleno" id="barra-progreso" style="width:14%;"></div>
+                    </div>
+                </div>
+
+                <!-- Pregunta -->
+                <div class="tarjeta-pregunta" id="tarjeta-pregunta">
+                    <h2 class="texto-pregunta" id="texto-pregunta"></h2>
+                    <p class="ayuda-pregunta" id="ayuda-pregunta"></p>
+                    <div class="contenedor-opciones" id="contenedor-opciones"></div>
+                </div>
+
+                <!-- Navegación -->
+                <div class="quiz-navegacion">
+                    <button class="btn btn-secundario" id="btn-anterior" disabled>
+                        &#8592; Anterior
+                    </button>
+                    <button class="btn btn-primario" id="btn-siguiente" disabled>
+                        Siguiente &#8594;
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- Resultados -->
+            <section id="resultados" class="seccion">
+
+                <!-- Conclusión principal -->
+                <div class="tarjeta-veredicto" id="tarjeta-veredicto">
+                    <div class="icono-veredicto" id="icono-veredicto"></div>
+                    <h2 class="titulo-veredicto" id="titulo-veredicto"></h2>
+                    <p class="desc-veredicto" id="desc-veredicto"></p>
+                    <div class="contenedor-score">
+                        <div class="numero-score-cont">
+                            <span class="numero-score" id="numero-score">0</span>
+                            <span class="score-total">/ 100</span>
+                        </div>
+                        <p class="score-etiqueta">Puntuación de viabilidad</p>
+                        <div class="barra-score-pista">
+                            <div class="barra-score-relleno" id="barra-score"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráfica resultados -->
+                <div class="tarjeta-analisis"
+                    style="margin-bottom: 2rem; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                    <h3>Desempeño por área</h3>
+                    <div style="width: 100%; max-width: 400px; margin-top: 1rem;">
+                        <canvas id="grafico-resultados"></canvas>
+                    </div>
+                </div>
+
+                <!-- Análisis -->
+                <div class="grid-analisis">
+                    <div class="tarjeta-analisis">
+                        <p class="etiqueta-area">Situación financiera</p>
+                        <div class="contenedor-badge" id="estado-financiero"></div>
+                        <p class="analisis-texto" id="texto-financiero"></p>
+                    </div>
+                    <div class="tarjeta-analisis">
+                        <p class="etiqueta-area">Condiciones del mercado</p>
+                        <div class="contenedor-badge" id="estado-mercado"></div>
+                        <p class="analisis-texto" id="texto-mercado"></p>
+                    </div>
+                    <div class="tarjeta-analisis">
+                        <p class="etiqueta-area">Tu nivel de preparación</p>
+                        <div class="contenedor-badge" id="estado-preparacion"></div>
+                        <p class="analisis-texto" id="texto-preparacion"></p>
+                    </div>
+                </div>
+
+                <!-- ¿Cómo llegamos al resultado? -->
+                <div class="tarjeta-razonamiento">
+                    <h3>¿Cómo llegamos a este resultado?</h3>
+                    <p class="razonamiento-desc">
+                        El sistema activó las siguientes reglas en orden para llegar al veredicto:
+                    </p>
+                    <div class="cadena-reglas" id="cadena-reglas"></div>
+                </div>
+
+                <!-- Recomendaciones -->
+                <div class="tarjeta-recomendaciones">
+                    <h3>Lo que te recomendamos</h3>
+                    <ul class="lista-recomendaciones" id="lista-recomendaciones"></ul>
+                </div>
+
+                <!-- Acciones -->
+                <div class="acciones-resultados">
+                    <button class="btn btn-secundario" id="btn-reiniciar">
+                        &#8592; Evaluar otro negocio
+                    </button>
+                    <button class="btn btn-primario" id="btn-imprimir">
+                        Imprimir resultado
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Pie página -->
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <p>ExpertBiz &mdash; Sistema Experto de Viabilidad Empresarial &mdash; Inteligencia Artificial 2026</p>
+            <p>Enfoque: Sistemas Expertos &mdash; Técnica: Forward Chaining</p>
+        </div>
+    </footer>
+
+    <script src="js/expert_system.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
